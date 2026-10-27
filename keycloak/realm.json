@@ -1,0 +1,51 @@
+{
+  "realm": "astian-maps",
+  "enabled": true,
+  "displayName": "Astian Maps",
+  "registrationAllowed": true,
+  "registrationEmailAsUsername": true,
+  "verifyEmail": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "bruteForceProtected": true,
+  "smtpServer": {
+    "host": "mailpit",
+    "port": "1025",
+    "from": "maps@astian.local",
+    "fromDisplayName": "Astian Maps",
+    "ssl": "false",
+    "starttls": "false",
+    "auth": "false"
+  },
+  "clients": [
+    {
+      "clientId": "astian-maps-web",
+      "name": "Astian Maps Web",
+      "publicClient": false,
+      "secret": "development-only-change-me",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["http://localhost:3000/api/auth/callback/keycloak"],
+      "webOrigins": ["http://localhost:3000"],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    },
+    {
+      "clientId": "astian-maps-mobile",
+      "name": "Astian Maps Mobile",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["astianmaps://oauth/callback"],
+      "attributes": {
+        "pkce.code.challenge.method": "S256"
+      }
+    }
+  ],
+  "passwordPolicy": "length(12) and digits(1) and lowerCase(1) and upperCase(1) and specialChars(1) and notUsername(undefined)",
+  "internationalizationEnabled": true,
+  "supportedLocales": ["es", "en", "fr", "de"],
+  "defaultLocale": "es"
+}

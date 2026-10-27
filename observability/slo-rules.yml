@@ -1,0 +1,47 @@
+groups:
+  - name: astian-maps-api-slo
+    interval: 30s
+    rules:
+      - record: astian_maps:http_availability:ratio_rate5m
+        expr: |
+          sum by (route) (
+            rate(astian_maps_http_requests_total{status=~"2..|3.."}[5m])
+          )
+          /
+          clamp_min(
+            sum by (route) (rate(astian_maps_http_requests_total[5m])),
+            0.000001
+          )
+      - record: astian_maps:http_request_duration_seconds:p95_rate5m
+        expr: |
+          histogram_quantile(
+            0.95,
+            sum by (le, route) (rate(astian_maps_http_request_duration_seconds_bucket[5m]))
+          )
+      - alert: AstianMapsApiFastErrorBudgetBurn
+        expr: astian_maps:http_availability:ratio_rate5m < 0.95
+        for: 5m
+        labels:
+          severity: critical
+          owner: maps-platform
+        annotations:
+          summary: Astian Maps API is consuming the 30-day error budget rapidly
+          runbook: docs/11-operacion-slo-y-campo.md
+      - alert: AstianMapsApiSearchLatency
+        expr: astian_maps:http_request_duration_seconds:p95_rate5m{route="/v1/search"} > 1
+        for: 10m
+        labels:
+          severity: warning
+          owner: maps-platform
+        annotations:
+          summary: Search p95 exceeds the staging objective
+          runbook: docs/11-operacion-slo-y-campo.md
+      - alert: AstianMapsApiRoutingLatency
+        expr: astian_maps:http_request_duration_seconds:p95_rate5m{route="/v1/routes"} > 2
+        for: 10m
+        labels:
+          severity: warning
+          owner: maps-platform
+        annotations:
+          summary: Routing p95 exceeds the staging objective
+          runbook: docs/11-operacion-slo-y-campo.md

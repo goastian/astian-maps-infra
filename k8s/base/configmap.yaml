@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: astian-api
+  namespace: astian-maps
+data:
+  ASTIAN_ENVIRONMENT: production
+  ASTIAN_TILEJSON_URL: https://tiles.example.org/planet.json
+  ASTIAN_STYLE_BASE_URL: https://maps.example.org/map-styles
+  # Updated atomically from the active immutable geodata release manifest.
+  ASTIAN_DATA_UPDATED_AT: "2026-07-17T00:00:00Z"
+  ASTIAN_CORS_ORIGINS: https://maps.example.org
+  ASTIAN_SYNC_ENABLED: "false"

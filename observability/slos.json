@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "windowDays": 30,
+  "services": {
+    "api": {
+      "availability": 0.995,
+      "routes": {
+        "/v1/search": { "availability": 0.99, "p95LatencyMs": 1000 },
+        "/v1/routes": { "availability": 0.99, "p95LatencyMs": 2000 },
+        "/v1/health": { "availability": 0.995, "p95LatencyMs": 250 }
+      }
+    }
+  },
+  "policy": {
+    "budgetRemainingAbove50": "normal",
+    "budgetRemaining20To50": "caution",
+    "budgetRemainingBelow20": "reliability-only",
+    "budgetExhausted": "freeze-feature-releases"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "./release-manifest.schema.json",
+  "schemaVersion": 1,
+  "releaseId": "2026-07-18-weekly",
+  "generatedAt": "2026-07-18T06:00:00Z",
+  "osmDataTimestamp": "2026-07-17T00:00:00Z",
+  "openMapTilesVersion": "3.16.0",
+  "artifacts": {
+    "tiles": {
+      "url": "s3://astian-maps-geodata/releases/2026-07-18-weekly/planet.pmtiles",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "sizeBytes": 1
+    }
+  },
+  "rollbackReleaseIds": [
+    "2026-07-11-weekly",
+    "2026-07-04-weekly"
+  ]
+}

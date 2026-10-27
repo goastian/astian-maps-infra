@@ -1,0 +1,50 @@
+{
+  "$schema": "./offline-package.schema.json",
+  "schemaVersion": 1,
+  "packageId": "monaco.2026-07-29.v1",
+  "region": {
+    "id": "monaco",
+    "name": "Monaco",
+    "bounds": [
+      7.409,
+      43.724,
+      7.44,
+      43.755
+    ]
+  },
+  "release": {
+    "createdAt": "2026-07-29T00:00:00Z",
+    "dataTimestamp": "2026-07-18T00:00:00Z",
+    "minimumAppVersion": "0.2.0",
+    "rollbackPackageIds": []
+  },
+  "artifacts": {
+    "map": {
+      "path": "map/planet.pmtiles",
+      "sha256": "6e9ec6d194529e99534389f796c493d512b071e9c33541b735c00c9085c639ff",
+      "sizeBytes": 417728,
+      "mediaType": "application/vnd.pmtiles",
+      "format": "pmtiles-v3"
+    },
+    "search": {
+      "path": "search/search-index.json",
+      "sha256": "407bb23f5229de98208a649b24be655f5edbee93c86dda75aadc17eb703e8b84",
+      "sizeBytes": 876,
+      "mediaType": "application/json",
+      "format": "astian-search-v1"
+    },
+    "routing": {
+      "path": "routing/routing-graph.json",
+      "sha256": "c87b1772435863680b040aa916da816e60cd8af2cdbda3534104bc052be8d882",
+      "sizeBytes": 929,
+      "mediaType": "application/json",
+      "format": "astian-routing-v1"
+    }
+  },
+  "totalSizeBytes": 419533,
+  "signature": {
+    "algorithm": "Ed25519",
+    "keyId": "offline-development-2026-01",
+    "value": "HojwzQq8Ffngy7p4kifEUuOjazLwlN1YuBXCw27fB/nAMbO8tqqw9PnUDdDxVCr/7Rz5RVyi7c807qpsuIk8Cw=="
+  }
+}

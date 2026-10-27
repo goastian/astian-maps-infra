@@ -1,0 +1,19 @@
+{
+  "schema": "astian-routing-v1",
+  "schemaVersion": 1,
+  "regionId": "monaco",
+  "generatedAt": "2026-07-29T00:00:00Z",
+  "profiles": ["driving", "cycling", "walking"],
+  "nodes": [
+    { "id": "palace", "latitude": 43.731278, "longitude": 7.420833 },
+    { "id": "port", "latitude": 43.734722, "longitude": 7.425278 },
+    { "id": "station", "latitude": 43.738611, "longitude": 7.419444 },
+    { "id": "casino", "latitude": 43.739722, "longitude": 7.427222 }
+  ],
+  "edges": [
+    { "from": "palace", "to": "port", "distanceMeters": 540, "durationSeconds": 130, "bidirectional": true },
+    { "from": "port", "to": "station", "distanceMeters": 690, "durationSeconds": 165, "bidirectional": true },
+    { "from": "port", "to": "casino", "distanceMeters": 720, "durationSeconds": 175, "bidirectional": true },
+    { "from": "station", "to": "casino", "distanceMeters": 760, "durationSeconds": 190, "bidirectional": true }
+  ]
+}

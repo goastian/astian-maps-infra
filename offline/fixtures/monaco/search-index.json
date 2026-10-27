@@ -1,0 +1,29 @@
+{
+  "schema": "astian-search-v1",
+  "schemaVersion": 1,
+  "regionId": "monaco",
+  "generatedAt": "2026-07-29T00:00:00Z",
+  "places": [
+    {
+      "id": "offline:monaco:palace",
+      "name": "Palais Princier de Monaco",
+      "normalizedName": "palais princier de monaco",
+      "category": "attraction",
+      "coordinates": { "latitude": 43.731278, "longitude": 7.420833 }
+    },
+    {
+      "id": "offline:monaco:casino",
+      "name": "Casino de Monte-Carlo",
+      "normalizedName": "casino de monte carlo",
+      "category": "attraction",
+      "coordinates": { "latitude": 43.739722, "longitude": 7.427222 }
+    },
+    {
+      "id": "offline:monaco:station",
+      "name": "Gare de Monaco-Monte-Carlo",
+      "normalizedName": "gare de monaco monte carlo",
+      "category": "transit",
+      "coordinates": { "latitude": 43.738611, "longitude": 7.419444 }
+    }
+  ]
+}
